@@ -22,6 +22,11 @@ public class PostService {
     }
 
     public List<Post> findByTitle(String text) {
-        return postRepository.findByTitleContainingIgnoreCase(text);
+
+        //Consulta caracteristica do MongoDB na forma de texto JSON
+        return postRepository.searchTitle(text);
+
+        // Consulta gerada pelo Spring Data automaticamente com metodo especial
+        //return postRepository.findByTitleContainingIgnoreCase(text);
     }
 }
