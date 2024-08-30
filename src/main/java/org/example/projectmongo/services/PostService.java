@@ -6,6 +6,7 @@ import org.example.projectmongo.services.exception.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -28,5 +29,10 @@ public class PostService {
 
         // Consulta gerada pelo Spring Data automaticamente com metodo especial
         //return postRepository.findByTitleContainingIgnoreCase(text);
+    }
+
+    public List<Post> fullSearch(String text, LocalDate minDate, LocalDate maxDate) {
+
+        return postRepository.fullSearch(text, minDate, maxDate);
     }
 }

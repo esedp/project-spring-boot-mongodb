@@ -19,7 +19,6 @@ public class Instantiation implements CommandLineRunner {
 
     DateTimeFormatter fmt1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
-
     @Autowired
     private UserRepository userRepository;
 
